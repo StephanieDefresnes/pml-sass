@@ -1,0 +1,31 @@
+<p>
+  <mat-toolbar>
+    <a href="/"><img width="40" [alt]="title" [src]="pathLogo"></a>
+    <a href="/" class="toolbar-title">{{title}} - {{page}}</a>
+    <span class="spacer"></span>
+    <button mat-icon-button class="user-icon" color="pml-color" aria-label="User menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
+
+<div class="content" role="main">
+
+    <router-outlet></router-outlet>
+
+
+    <ul class="list-group">
+
+        <li 
+
+            *ngFor="let post of posts"
+
+            class="list-group-item">
+
+            {{ post.typePost }}
+
+        </li>
+
+    </ul>
+
+</div>

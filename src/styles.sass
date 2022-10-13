@@ -1,0 +1,41 @@
+@import 'assets/sass/variables'
+
+html
+  background: $dark-chocolate
+
+body
+  background: $dark-chocolate
+
+  &.mat-typography
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+    font-size: 16px
+    color: $white
+    box-sizing: border-box
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+  & .spacer
+    flex: 1 1 auto
+
+  & .mat-toolbar
+    background: transparent
+
+    & .user-icon
+      color: $white
+
+    & .toolbar-title
+      margin: 0 15px
+      text-decoration: none
+      color: $white
+      font-family: $blippo-family
+      font-size: 25px
+
+  & .content
+    display: flex
+    margin: 5rem auto
+    padding: 0 16px
+    max-width: 960px
+    flex-direction: column
+    align-items: center
+
+
