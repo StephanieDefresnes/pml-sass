@@ -5,7 +5,7 @@
     >
     <mat-card class="authentication-card">
         <mat-card-header>
-            <mat-card-title>Register</mat-card-title>
+            <mat-card-title>S'inscrire</mat-card-title>
         </mat-card-header>
         <mat-card-content>
             <form
@@ -18,18 +18,24 @@
                     <input matInput type="email" formControlName="email" />
                 </mat-form-field>
                 <mat-form-field>
-                    <mat-label>Password</mat-label>
+                    <mat-label>Mot de passe</mat-label>
                     <input matInput type="password" formControlName="password" />
                 </mat-form-field>
             </form>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="onSubmit()">
-                Register
-            </button>
-            <button mat-button routerLink="/login" routerLinkActive="active">
-                Already have an account? Login here.
-            </button>
+            <mat-grid-list cols="1" rowHeight="65px">
+                <mat-grid-tile>
+                    <button mat-raised-button color="primary" (click)="onSubmit()">
+                        Valider
+                    </button>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <button mat-button routerLink="/login" routerLinkActive="active" class="signInUp">
+                        Vous avez déjà un compte? Connectez-vous ici.
+                    </button>
+                </mat-grid-tile>
+            </mat-grid-list>
         </mat-card-actions>
     </mat-card>
 </div>
