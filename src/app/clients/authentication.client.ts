@@ -19,18 +19,6 @@ export class AuthenticationClient {
             { responseType: 'text' }
         );
     }
-    
-//    public login(email: string, password: string): void {
-//       this.http.post(`${environment.config.urlLogin}/api/login`, { email, password })
-//            .pipe(
-//                map(response => {
-//                    // login successful if there's a jwt token in the response
-//                    if (response) {
-//                        localStorage.setItem('jwt', JSON.stringify(response));
-//                    }
-//                })
-//            );
-//    }
 
     public register(
         email: string,
