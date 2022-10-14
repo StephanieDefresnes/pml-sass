@@ -6,7 +6,11 @@ import {
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-import { PostService } from './services/post.service';
+import { AuthenticationService } from './services/authentication.service';
+
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUserEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -15,22 +19,16 @@ import { PostService } from './services/post.service';
 })
 export class AppComponent implements OnInit {
     
-//  globalFonts:any = './../assets/fonts/font-file.css';
   pathLogo:any = './../assets/img/logo.png';
-//  globalStyles:any = './../assets/css/styles.css';
-//  iconStyles:any = './../assets/css/icon.css';
   
   title = 'playmalife';
   page = 'Ze blog';
   
   posts:any;
   
-  constructor(private service:PostService) {}  
+  constructor(library: FaIconLibrary, public authService: AuthenticationService) {
+    library.addIcons(faSignInAlt,faUserEdit);
+  }  
 
-  ngOnInit() {
-    this.service.getPosts()
-      .subscribe(response => {
-        this.posts = response;
-      });
-  }
+  ngOnInit() {}
 }
