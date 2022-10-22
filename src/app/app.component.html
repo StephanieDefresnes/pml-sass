@@ -1,26 +1,5 @@
-<p>
-<mat-toolbar>
-    <a routerLink=""><img width="40" [alt]="title" [src]="pathLogo"></a>
-    <a routerLink="" class="toolbar-title">{{title}} - {{page}}</a>
-    <span class="spacer"></span>
-    <button mat-button [matMenuTriggerFor]="userMenu"
-            class="user-icon" color="pml-color">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #userMenu="matMenu" xPosition="before">
-        <button mat-menu-item class="item-userMenu"><mat-icon>email</mat-icon>Contact</button>
-        <button *ngIf="!authService.isLoggedIn()" mat-menu-item class="item-userMenu"
-                routerLink="/login"><fa-icon icon="sign-in-alt"></fa-icon>S'identifier</button>
-        <button *ngIf="!authService.isLoggedIn()" mat-menu-item class="item-userMenu"
-                routerLink="/register"><fa-icon icon="user-edit"></fa-icon>S'inscrire</button>
-        <button *ngIf="authService.isLoggedIn()" mat-menu-item class="item-userMenu"
-                routerLink="/admin"><mat-icon>dashboard</mat-icon>Tableau de bord</button>
-    </mat-menu>
-</mat-toolbar>
-</p>
-
+<app-header></app-header>
 <div class="content" role="main">
-
     <router-outlet></router-outlet>
-
 </div>
+<app-footer></app-footer>

@@ -1,0 +1,26 @@
+<p>
+<mat-toolbar>
+    <a routerLink=""><img width="40" [alt]="titleSite" [src]="pathLogo"></a>
+    <a routerLink="" class="toolbar-title">
+        {{ titleSite }} <span class="hide-xxs"> - {{ titlePage | async }}</span>
+</a>
+    <span class="spacer"></span>
+    <button mat-button [matMenuTriggerFor]="userMenu"
+            class="user-icon" color="pml-color">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #userMenu="matMenu" xPosition="before">
+        <button mat-menu-item class="item-userMenu"><mat-icon>email</mat-icon>Contact</button>
+        <button *ngIf="!authService.isLoggedIn()" mat-menu-item class="item-userMenu"
+                routerLink="/login"><fa-icon icon="sign-in-alt"></fa-icon>S'identifier</button>
+        <button *ngIf="!authService.isLoggedIn()" mat-menu-item class="item-userMenu"
+                routerLink="/register"><fa-icon icon="user-edit"></fa-icon>S'inscrire</button>
+        <button *ngIf="authService.isLoggedIn()" mat-menu-item class="item-userMenu"
+                routerLink="/profile"><mat-icon>account_circle</mat-icon>Profil</button>
+        <button *ngIf="authService.isLoggedIn()" mat-menu-item class="item-userMenu"
+                routerLink="/admin"><mat-icon>dashboard</mat-icon>Tableau de bord</button>
+        <button *ngIf="authService.isLoggedIn()" mat-menu-item class="item-userMenu"
+                (click)="logout()"><fa-icon icon="sign-out-alt"></fa-icon>Se déconnecter</button>
+    </mat-menu>
+</mat-toolbar>
+</p>

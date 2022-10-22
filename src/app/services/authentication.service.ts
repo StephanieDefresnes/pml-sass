@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationClient } from '../clients/authentication.client';
+//import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ export class AuthenticationService {
   
   constructor(
     private authenticationClient: AuthenticationClient,
+//    public userService: UserService,
     private router: Router
   ) { }
 
@@ -30,8 +32,15 @@ export class AuthenticationService {
   }
 
   public logout() {
+//    this.authenticationClient
+//      .logout(username)
+//      .subscribe((token) => {
+//        localStorage.removeItem(this.tokenKey)
+//        this.router.navigate(['/']);
+//      });
     localStorage.removeItem(this.tokenKey);
     this.router.navigate(['/']);
+//    return this.http.post(environment.apiUrl + '/api/logout', { }, httpOptions);
   }
 
   public isLoggedIn(): boolean {

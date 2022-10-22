@@ -6,11 +6,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PostService {
-  private url = environment.apiUrl;
-
   constructor(private httpClient: HttpClient) { }
 
   getPosts(){
-    return this.httpClient.get(this.url + '/posts');
+    return this.httpClient.get(environment.apiUrl+ '/posts');
   }
 }

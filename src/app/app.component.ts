@@ -1,34 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  HttpEvent,
-  HttpHandler,
-  HttpHeaders,
-  HttpInterceptor,
-  HttpRequest,
-} from '@angular/common/http';
-import { AuthenticationService } from './services/authentication.service';
-
-import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
-import { faUserEdit } from '@fortawesome/free-solid-svg-icons';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.sass']
 })
-export class AppComponent implements OnInit {
-    
-  pathLogo:any = './../assets/img/logo.png';
+export class AppComponent {
+  constructor(){ }
   
-  title = 'playmalife';
-  page = 'Ze blog';
-  
-  posts:any;
-  
-  constructor(library: FaIconLibrary, public authService: AuthenticationService) {
-    library.addIcons(faSignInAlt,faUserEdit);
-  }  
-
-  ngOnInit() {}
 }

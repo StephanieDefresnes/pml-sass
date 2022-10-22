@@ -6,7 +6,9 @@ import {
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-import { PostService } from './../services/post.service';
+
+import { HeaderService } from './../../../services/header.service';
+import { PostService } from './../../../services/post.service';
 
 @Component({
   selector: 'app-home',
@@ -17,13 +19,19 @@ export class HomeComponent implements OnInit {
   
   posts:any;
   
-  constructor(private service:PostService) {}  
+  constructor(
+    private headerService: HeaderService,
+    private postService: PostService,
+  ) {}
 
   ngOnInit() {
-    this.service.getPosts()
+      
+    this.headerService.updateTitlePage('Ze blog')
+    
+    this.postService.getPosts()
       .subscribe(response => {
         this.posts = response;
-      });
+      })
   }
 
 }

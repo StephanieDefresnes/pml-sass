@@ -5,16 +5,15 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SecretComponent } from './secret/secret.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LayoutModule } from '@angular/cdk/layout';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -23,18 +22,27 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
 
-import { AdminComponent } from './admin/admin.component';
-import { HomeComponent } from './home/home.component';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { RegisterPageComponent } from './register-page/register-page.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+
+import { AdminComponent } from './layout/main/admin/admin.component';
+import { HomeComponent } from './layout/main/home/home.component';
+import { ProfileComponent } from './layout/main/profile/profile.component';
+
+import { LoginPageComponent } from './security/login-page/login-page.component';
+import { RegisterPageComponent } from './security/register-page/register-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SecretComponent,
     AdminComponent,
+    FooterComponent,
+    HeaderComponent,
     HomeComponent,
     LoginPageComponent,
+    ProfileComponent,
     RegisterPageComponent,
   ],
   imports: [

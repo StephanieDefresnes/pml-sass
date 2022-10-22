@@ -1,8 +1,8 @@
 import { AuthenticationService } from './../services/authentication.service';
 import {
+  HTTP_INTERCEPTORS,
   HttpEvent,
   HttpHandler,
-  HttpHeaders,
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
@@ -11,16 +11,21 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  constructor(public authenticationService: AuthenticationService) {}
+    
+  constructor(
+    public authService: AuthenticationService,
+  ) {}
+  
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    if (this.authenticationService.isLoggedIn()) {
+  
+    if (this.authService.isLoggedIn()) {
         
       let newRequest = request.clone({
         setHeaders: {
-          Authorization: `Bearer ${this.authenticationService.getToken()}`,
+          Authorization: `Bearer ${this.authService.getToken()}`,
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
         },

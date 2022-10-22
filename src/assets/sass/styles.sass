@@ -1,11 +1,12 @@
-@import 'assets/sass/variables'
+@import './_variables'
+@import './_media-queries'
 
 html
   background: $dark-chocolate
 
 body
   background: $dark-chocolate
-
+  
   &.mat-typography
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
     font-size: 16px
@@ -35,8 +36,6 @@ body
     margin: 5rem auto
     padding: 0 16px
     max-width: 960px
-    flex-direction: column
-    align-items: center
 
     & button
       &.mat-primary
@@ -46,27 +45,31 @@ body
 
     & app-login-page, & app-register-page
       width: 100%
-      & .authentication-card-container
+      
+      & .authentication-card-container      
         & > .authentication-card
-          width: 30%
+          width: 100%
+          max-width: 300px
           margin: 0 auto
-          & .mat-card-header
-            -ms-flex-pack: center
-            justify-content: center
-            margin-top: 6px
+          
+          & .mat-card-header          
             & .mat-card-header-text
               font-family: $blippo-family
               color: $dark-chocolate
+              
           & .mat-card-content
               margin-bottom: 0
-              & .mat-form-field
+              
+              & .mat-form-field              
                 &.mat-focused
                   & .mat-form-field-label
                     color: $dark-chocolate
                   & .mat-form-field-ripple
                     background: $dark-chocolate
+                    
                 & .mat-input-element
                   caret-color: $dark-chocolate
+                  
           & .mat-card-actions
             & .signInUp
               padding: 6px 16px
@@ -75,15 +78,21 @@ body
 
   & > .cdk-overlay-container
     & .item-userMenu
+    
       & > .ng-fa-icon
         padding-left: 2px
         vertical-align: middle
         font-size: 20px
         color: $grey-item
+        
         &[icon="sign-in-alt"]
           margin-right: 18px
+        &[icon="sign-out-alt"]
+          margin-right: 16px
+          padding-left: 4px
         &[icon="user-edit"]
           margin-right: 13px
+          
       &:hover
         color: $dark-chocolate
         & > .mat-icon, & > .ng-fa-icon
