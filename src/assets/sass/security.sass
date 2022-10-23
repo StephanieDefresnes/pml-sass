@@ -1,0 +1,32 @@
+@import './_variables'
+
+app-login-page, app-register-page
+  width: 100%
+
+  & .authentication-card-container      
+    & > .authentication-card
+      margin: 0 auto
+
+      & .mat-card-header          
+        & .mat-card-header-text
+          font-family: $blippo-family
+          color: $dark-chocolate
+
+      & .mat-card-content
+          margin-bottom: 0
+
+          & .mat-form-field              
+            &.mat-focused
+              & .mat-form-field-label
+                color: $dark-chocolate
+              & .mat-form-field-ripple
+                background: $dark-chocolate
+
+            & .mat-input-element
+              caret-color: $dark-chocolate
+
+      & .mat-card-actions
+        & .signInUp
+          padding: 6px 16px
+          white-space: normal
+          line-height: 1

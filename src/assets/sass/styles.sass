@@ -1,3 +1,4 @@
+@import './security'
 @import './_variables'
 
 html
@@ -17,20 +18,6 @@ body
   & .spacer
     flex: 1 1 auto
 
-  & .mat-toolbar
-    height: 64px
-    background: transparent
-
-    & .user-icon
-      color: $white
-
-    & .toolbar-title
-      margin: 0 15px
-      text-decoration: none
-      color: $white
-      font-family: $blippo-family
-      font-size: 25px
-
   & .content
     display: flex
     margin: 5rem auto
@@ -42,58 +29,3 @@ body
         background: $playmo-blue
         color: $dark-chocolate
         font-weight: bold
-
-    & app-login-page, & app-register-page
-      width: 100%
-      
-      & .authentication-card-container      
-        & > .authentication-card
-          width: 100%
-          max-width: 300px
-          margin: 0 auto
-          
-          & .mat-card-header          
-            & .mat-card-header-text
-              font-family: $blippo-family
-              color: $dark-chocolate
-              
-          & .mat-card-content
-              margin-bottom: 0
-              
-              & .mat-form-field              
-                &.mat-focused
-                  & .mat-form-field-label
-                    color: $dark-chocolate
-                  & .mat-form-field-ripple
-                    background: $dark-chocolate
-                    
-                & .mat-input-element
-                  caret-color: $dark-chocolate
-                  
-          & .mat-card-actions
-            & .signInUp
-              padding: 6px 16px
-              white-space: normal
-              line-height: 1
-
-  & > .cdk-overlay-container
-    & .item-userMenu
-    
-      & > .ng-fa-icon
-        padding-left: 2px
-        vertical-align: middle
-        font-size: 20px
-        color: $grey-item
-        
-        &[icon="sign-in-alt"]
-          margin-right: 18px
-        &[icon="sign-out-alt"]
-          margin-right: 16px
-          padding-left: 4px
-        &[icon="user-edit"]
-          margin-right: 13px
-          
-      &:hover
-        color: $dark-chocolate
-        & > .mat-icon, & > .ng-fa-icon
-          color: $dark-chocolate
