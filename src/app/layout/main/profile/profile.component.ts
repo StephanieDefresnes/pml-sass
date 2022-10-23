@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HeaderService } from './../../../services/header.service';
-import { UserService } from './../../../services/user.service';
+import { HeaderService } from '../../../services/header.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-profile',

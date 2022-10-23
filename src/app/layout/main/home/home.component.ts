@@ -7,8 +7,8 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 
-import { HeaderService } from './../../../services/header.service';
-import { PostService } from './../../../services/post.service';
+import { HeaderService } from '../../../services/header.service';
+import { PostService } from '../../../services/post.service';
 
 @Component({
   selector: 'app-home',

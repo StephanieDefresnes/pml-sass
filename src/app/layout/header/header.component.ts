@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChildren } from '@angular/core';
 
-import { AuthenticationService } from './../../services/authentication.service';
-import { HeaderService } from './../../services/header.service';
+import { AuthenticationService } from '../../services/authentication.service';
+import { HeaderService } from '../../services/header.service';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +15,7 @@ import { faUserEdit } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
     
-  pathLogo:any = './../../assets/img/logo.png';
+  pathLogo:any = '../../assets/img/logo.png';
   titleSite = 'playmalife';
   
   constructor(
