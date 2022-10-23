@@ -1,9 +1,10 @@
 <p>
 <mat-toolbar>
     <a routerLink=""><img width="40" [alt]="titleSite" [src]="pathLogo"></a>
-    <a routerLink="" class="toolbar-title">
-        {{ titleSite }} <span class="hide-xxs"> - {{ titlePage | async }}</span>
-</a>
+    <a routerLink="" class="toolbar-title" fxLayout="row" fxLayoutGap="8px">
+        <span>{{ titleSite }} </span>
+        <span fxHide.xs> - {{ titlePage | async }}</span>
+    </a>
     <span class="spacer"></span>
     <button mat-button [matMenuTriggerFor]="userMenu"
             class="user-icon" color="pml-color">
